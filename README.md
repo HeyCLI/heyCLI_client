@@ -8,7 +8,7 @@ Helps use shell commadn line without need to remeber commands or spend time sear
 
 ## how to install
 
-Just download the sh file from this repo 
+From your terminal, download the sh file from this repo 
 
 ```
 curl -o heycli_client.sh https://raw.githubusercontent.com/HeyCLI/heyCLI/main/heycli_client.sh
