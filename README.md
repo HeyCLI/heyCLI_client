@@ -22,7 +22,7 @@ source heycli_client.sh
 
 That's it, you should be able to use the "hey" command!
 
-##License
+## License
   
    copyright © 2023 HeyCLI open source project
 
