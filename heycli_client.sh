@@ -18,7 +18,7 @@ function hey() {
   current_dir="$(pwd)"
   curl \
                 -F "command=$str" \
+                -H "Authorization:$HEYCLI_API_KEY" \
                 -F "curr_dir=$current_dir" \
                 https://api.heycli.com//heycli
-
 }
