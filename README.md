@@ -2,9 +2,7 @@
 
 A LLM powered command line. Uses GPT-3 davinci-003 as of last update. 
 
-Helps use shell commadn line without need to remeber commands or spend time searching Google and stackoverflow.
-
-![alt text](https://github.com/HeyCLI/heyCLI/blob/main/heycli_demo.png)
+Helps use shell commadn line without need to remeber commands or spend time searching Google and stackoverflow. Demo below.
 
 ## how to install
 
@@ -21,6 +19,10 @@ source heycli_client.sh
 ```
 
 That's it, you should be able to use the "hey" command!
+
+## Demo
+
+![alt text](https://github.com/HeyCLI/heyCLI/blob/main/heycli_demo.png)
 
 ## License
   
