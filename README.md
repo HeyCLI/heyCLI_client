@@ -26,6 +26,11 @@ source heycli_client.sh
 export HEYCLI_API_KEY=<token>
 ```
 
+5. (Optional) add context to heyCLI by running:
+
+```
+hey setup
+```
 
 That's it, you should be able to use the "hey" command!
 
