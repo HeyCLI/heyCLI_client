@@ -6,17 +6,26 @@ Helps use shell commadn line without need to remeber commands or spend time sear
 
 ## how to install
 
-Go to your terminal and download the sh file from this repo 
+1. Go to your terminal and download the sh file from this repo 
 
 ```
 curl -o heycli_client.sh https://raw.githubusercontent.com/HeyCLI/heyCLI/main/heycli_client.sh
 ```
 
-then 
+2. Source the script, type in your terminal:  
 
 ```
 source heycli_client.sh
 ```
+
+3. Go grab an API token here: https://signup.heycli.com/
+
+4. Finally, set the HEYCLI_API_KEY environment variable in your terminal: 
+
+```
+export HEYCLI_API_KEY=<token>
+```
+
 
 That's it, you should be able to use the "hey" command!
 
