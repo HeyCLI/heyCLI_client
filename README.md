@@ -34,6 +34,10 @@ hey setup
 
 That's it, you should be able to use the "hey" command!
 
+## Support
+
+Encounter any issues? please open an issue or email me at hadiazzouni@heycli.com
+
 ## Demo
 
 ![alt text](https://github.com/HeyCLI/heyCLI/blob/main/heycli_demo.png)
