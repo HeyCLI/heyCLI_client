@@ -33,7 +33,7 @@ Encounter any issues? please open an issue or email me at hadiazzouni@heycli.com
 
 ## Demo
 
-![alt text](https://github.com/HeyCLI/heyCLI/blob/main/heycli_demo.png)
+![alt text](https://github.com/HeyCLI/heyCLI_client/blob/main/demo_heycli.gif)
 
 ## License
   
