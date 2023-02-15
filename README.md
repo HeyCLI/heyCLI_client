@@ -25,7 +25,16 @@ source heycli_client.sh
 ```
 export HEYCLI_API_KEY=<token>
 ```
+5. (Optional) setup context for HeyCLI for improved answers and suggestions. Type:
+
+```
+hey setup
+```
+
 That's it, you should be able to use the "hey" command!
+
+## IMPORTANT: 
+The setup command will upload your command history as is. We will add tooling to anonymise and clean the history from potential sensitive data in the future
 
 ## Support
 
