@@ -33,7 +33,7 @@ hey setup
 
 That's it, you should be able to use the "hey" command!
 
-## IMPORTANT: 
+## IMPORTANT 
 The setup command will upload your command history as is. We will add tooling to anonymise and clean the history from potential sensitive data in the future
 
 ## Support
