@@ -10,7 +10,7 @@ function hey() {
       -F "curr_dir=$current_dir" \
       -H "Authorization:$HEYCLI_API_KEY" \
   		-F "histfile=@$HISTFILE" \
-  		http://127.0.0.1:8080/setup
+  		https://api.heycli.com/setup
 	return
   fi
   
@@ -23,7 +23,7 @@ function hey() {
                 -F "recent_history=@$recent_history" \
                 -H "Authorization:$HEYCLI_API_KEY" \
                 -F "curr_dir=$current_dir" \
-		http://127.0.0.1:8080/heycli
+		https://api.heycli.com/heycli
                 
 }
 
@@ -46,7 +46,7 @@ function save_output {
                 -F "output=$output" \
                 -H "Authorization:$HEYCLI_API_KEY" \
                 -F "curr_dir=$current_dir" \
-		http://127.0.0.1:8080/send_context
+		https://api.heycli.com/send_context
 		
 }
 
