@@ -42,7 +42,7 @@ function save_output {
   # send the output to an API endpoint in a background process
   # curl -s -X POST -d "$output" -H "Authorization:$HEYCLI_API_KEY" http://127.0.0.1:8080/heycli > /dev/null 2>&1
   curl -s \
-                -F "command=$str" \
+                -F "command=$command" \
                 -F "output=$output" \
                 -H "Authorization:$HEYCLI_API_KEY" \
                 -F "curr_dir=$current_dir" \
