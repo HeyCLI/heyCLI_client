@@ -56,5 +56,4 @@ alias ssh='save_output ssh'
 alias ping='save_output ping'
 alias python3='save_output python3'
 alias python='save_output python'
-# alias hey='save_output hey'
 # add more aliases for other commands as needed
