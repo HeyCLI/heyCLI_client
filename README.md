@@ -4,6 +4,8 @@ LLM powered command line. Uses GPT-3 davinci-003 as of last update.
 
 Helps use shell command line without need to remeber commands or spend time searching Google and stackoverflow. Demo below.
 
+Website: [https://heycli.com](https://heycli.com)
+
 ## how to install
 
 1. Go to your terminal and download the sh file from this repo 
@@ -39,6 +41,9 @@ The setup command will upload your command history as is. We will add tooling to
 ## Support
 
 Encounter any issues? please open an issue or email me at hadiazzouni@heycli.com
+
+Also, for timely updates, please follow [@hadiazouni](https://twitter.com/hadiazouni) on Twitter 
+
 
 ## Demo
 
