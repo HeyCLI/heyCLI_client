@@ -38,13 +38,6 @@ That's it, you should be able to use the "hey" command!
 ## IMPORTANT 
 The setup command will upload your command history as is. We will add tooling to anonymise and clean the history from potential sensitive data in the future
 
-## Support
-
-Encounter any issues? please open an issue or email me at hadiazzouni@heycli.com
-
-Also, for timely updates, please follow [@hadiazouni](https://twitter.com/hadiazouni) on Twitter 
-
-
 ## Demo & use cases
 
 ![alt text](https://github.com/HeyCLI/heyCLI_client/blob/main/assets/demo_heycli.gif)
@@ -68,6 +61,12 @@ To add a specific command to be debugged, all you need to do is add the command 
 Example:
 
 ![alt text](https://github.com/HeyCLI/heyCLI_client/blob/main/assets/execute.png)
+
+## Support
+
+Encounter any issues? please open an issue or email me at hadiazzouni@heycli.com
+
+Also, for timely updates, please follow [@hadiazouni](https://twitter.com/hadiazouni) on Twitter 
 
 ## License
   
