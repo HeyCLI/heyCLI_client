@@ -54,6 +54,7 @@ In addition to simple command suggestions, you can do:
 1.  In-terminal debugging of python, nodejs, kubectl, gcloud, aws and many other command errors. When you get an error, just type: hey debug the error above (or something like that, be creative!) 
 
 Example:
+
 ![alt text](https://github.com/HeyCLI/heyCLI_client/blob/main/assets/debug.png)
 
 To activate this feature, you need to update your heycli_client.sh file. Get the new one from https://github.com/HeyCLI/heyCLI_client
@@ -65,6 +66,7 @@ To add a specific command to be debugged, all you need to do is add the command 
 2. we attached HeyCLI to some commands so you can type "yes" to execute them. 
 
 Example:
+
 ![alt text](https://github.com/HeyCLI/heyCLI_client/blob/main/assets/execute.png)
 
 ## License
