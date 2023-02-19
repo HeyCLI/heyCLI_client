@@ -60,7 +60,7 @@ To activate this feature, you need to update your heycli_client.sh file. Get the
 
 To add a specific command to be debugged, all you need to do is add the command at the end of the heycli_client.sh file (don't forget to source it afterwards!):
 
-![alt text](https://github.com/HeyCLI/heyCLI_client/blob/main/assets/add_command.png)
+![alt text](https://github.com/HeyCLI/heyCLI_client/blob/main/assets/add_commands.png)
 
 2. we attached HeyCLI to some commands so you can type "yes" to execute them. 
 
