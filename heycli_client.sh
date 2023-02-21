@@ -44,7 +44,7 @@ function hey() {
                 -F "curr_dir=$current_dir" \
 		    "$API_END_POINT/heycli")
 
-  echo $result
+  # echo $result
   
   command_line=$(echo $result | jq -r '.command')
   answer=$(echo $result | jq -r '.original_text')
