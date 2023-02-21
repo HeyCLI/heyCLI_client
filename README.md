@@ -6,7 +6,7 @@ Helps use shell command line without need to remember commands or spend time sea
 
 Website: [https://heycli.com](https://heycli.com)
 
-If you find this useful or cool, please give us a star :) 
+If you find this useful or cool, please give us a star ⭐️  :) 
 
 ## how to install
 
