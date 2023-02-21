@@ -1,5 +1,23 @@
 # By heycli.com
 # License: Any kind of usage of this file is allowed 
+# Install jq using apt-get or yum depending on the detected OS
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # Debian/Ubuntu-based systems
+    apt-get update
+    apt-get install -y jq
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS
+    brew install jq
+else
+    # Unsupported OS
+    echo "Error: Unsupported OS"
+    exit 1
+fi
+
+PROD_API_ENDPOINT="https://api.heycli.com"
+LOCAL_API_ENDPOINT="http://127.0.0.1:8080"
+
+API_END_POINT=$PROD_API_ENDPOINT
 
 function hey() {
   if [[ $1 == "setup" &&  $# -eq 1 ]];
@@ -10,7 +28,7 @@ function hey() {
       -F "curr_dir=$current_dir" \
       -H "Authorization:$HEYCLI_API_KEY" \
   		-F "histfile=@$HISTFILE" \
-  		https://api.heycli.com/setup
+  		"$API_END_POINT/setup"
 	return
   fi
   
@@ -24,34 +42,29 @@ function hey() {
                 -F "recent_history=@$recent_history" \
                 -H "Authorization:$HEYCLI_API_KEY" \
                 -F "curr_dir=$current_dir" \
-		    https://api.heycli.com/heycli)
-  
-  echo "$result"
-  
-  command_line=$(echo "$result" | grep -o "Answer: .*" | sed 's/Answer: //')
+		    "$API_END_POINT/heycli")
 
-  # echo "Command is: $command_line"
+  echo $result
+  
+  command_line=$(echo $result | jq -r '.command')
+  answer=$(echo $result | jq -r '.original_text')
 
-  if [[ -n "$command" ]]; then 
-      echo -n "Execute command? (yes/no): "  # prompt user to confirm choice
+  echo "Answer: $answer"
+
+  if [[ -n "$command_line" ]]; then 
+      echo -n "Execute command ($command_line)? (type \"yes\" to approve): "  # prompt user to confirm choice
       read choice   # read user input
             case "$choice" in
                 [Yy][Ee][Ss])   # if user enters "yes"
                     eval "$command_line"   # execute the command
                     ;;
-                [Nn][Oo])   # if user enters "no"
-                    echo "Command not executed."
-                    ;;
                 *)   # if user enters anything else
-                    echo "Please enter 'yes' or 'no'."
+                    echo "Command not executed."
                     ;;
             esac
   fi
-                
 }
 
-# http://127.0.0.1:8080/heycli
-# https://api.heycli.com//heycli
 
 function save_output {
 
@@ -59,18 +72,15 @@ function save_output {
   # output=$($@ 2>&1 | tee ~/.command_outputs)
   output=$($@ 2>&1 | tee /dev/tty)
 
-  # display the output
-  # echo "$output"
   command="$*"
   current_dir="$(pwd)"
-  # send the output to an API endpoint in a background process
-  # curl -s -X POST -d "$output" -H "Authorization:$HEYCLI_API_KEY" http://127.0.0.1:8080/heycli > /dev/null 2>&1
+
   curl -s \
                 -F "command=$command" \
                 -F "output=$output" \
                 -H "Authorization:$HEYCLI_API_KEY" \
                 -F "curr_dir=$current_dir" \
-		https://api.heycli.com/send_context
+		"$API_END_POINT//send_context"
 		
 }
 
