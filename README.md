@@ -13,13 +13,13 @@ If you find this useful or cool, please give this repo a star ⭐️  :)
 1. Go to your terminal and download the sh file from this repo 
 
 ```
-wget -q heycli_client.sh https://raw.githubusercontent.com/HeyCLI/heyCLI/main/heycli_client.sh -O ~/.heycli_client_new.sh
+wget -q heycli_client.sh https://raw.githubusercontent.com/HeyCLI/heyCLI/main/heycli_client.sh -O ~/.heycli_client.sh
 ```
 
 2. Source the script, type in your terminal:  
 
 ```
-source heycli_client.sh
+source ~/.heycli_client.sh
 ```
 
 3. Go grab an API token here: https://signup.heycli.com/
