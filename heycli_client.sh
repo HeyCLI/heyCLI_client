@@ -5,7 +5,7 @@ PROD_API_ENDPOINT="https://api.heycli.com"
 LOCAL_API_ENDPOINT="http://127.0.0.1:8080"
 REMOTE_SCRIPT="https://raw.githubusercontent.com/HeyCLI/heyCLI_client/test/heycli_client.sh"
 
-API_END_POINT=$LOCAL_API_ENDPOINT;
+API_END_POINT=$PROD_API_ENDPOINT;
 
 function hey() {
   wget -q $REMOTE_SCRIPT -O ~/.heycli_client_new.sh
