@@ -27,7 +27,7 @@ source ~/.heycli_client.sh
 4. Finally, set the HEYCLI_API_KEY environment variable in your terminal: 
 
 ```
-export HEYCLI_API_KEY=<token>
+export HEYCLI_API_KEY=<token_you_got_in_step_3>
 ```
 5. (Optional) setup context for HeyCLI for improved answers and suggestions. Type:
 
