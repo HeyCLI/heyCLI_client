@@ -2,7 +2,7 @@
 
 LLM powered command line. Uses GPT-3 davinci-003 as of last update. 
 
-Helps use shell command line without need to remember commands or spend time searching Google and stackoverflow. Demo below.
+This tool Helps you use command line Terminal without need to remember commands or spend time searching Google and stackoverflow. Demo below.
 
 Website: [https://heycli.com](https://heycli.com)
 
