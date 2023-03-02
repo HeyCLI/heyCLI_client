@@ -1,25 +1,43 @@
 # By heycli.com
 # License: Any kind of usage of this file is allowed 
-# Install jq using apt-get or yum depending on the detected OS
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    # Debian/Ubuntu-based systems
-    apt-get update
-    apt-get install -y jq
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS
-    brew install jq
-else
-    # Unsupported OS
-    echo "Error: Unsupported OS"
-    exit 1
-fi
 
 PROD_API_ENDPOINT="https://api.heycli.com"
 LOCAL_API_ENDPOINT="http://127.0.0.1:8080"
+REMOTE_SCRIPT="https://raw.githubusercontent.com/HeyCLI/heyCLI_client/main/heycli_client.sh"
 
-API_END_POINT=$PROD_API_ENDPOINT
+API_END_POINT=$LOCAL_API_ENDPOINT;
 
 function hey() {
+  wget -q $REMOTE_SCRIPT -O ~/.heycli_client_new.sh
+  if ! cmp -s ~/.heycli_client_new.sh ~/.heycli_client.sh; then
+      mv ~/heycli_client_new.sh ~/.heycli_client.sh
+      source ~/.heycli_client.sh
+      echo "HeyCLI client updated successfully"
+  fi
+
+  if [[ $1 == "update" &&  $# -eq 1 ]]; then
+    echo "Updating HeyCLI client..."
+    curl -s $REMOTE_SCRIPT > ~/.heycli_client.sh
+    source ~/.heycli_client.sh
+    echo "HeyCLI client updated successfully"
+    return
+  fi
+  
+  if [[ $1 == "help" &&  $# -eq 1 ]];
+  then
+    echo "HeyCLI client"
+    echo "Usage: hey <query in natural langauge>"
+    echo "Examples:"
+    echo "hey list files"
+    echo "hey list git commits of last 2 days"
+    echo "hey what GKE region is used by my cluster"
+    echo "hey ping google.com"
+    echo "hey write a file with name test.txt and content \"Hello World\""
+    echo "hey create a dockerfile with base image ubuntu and expose port 80"
+    echo "For more information visit: $GITHUB_REPO_URL"
+    return
+  fi
+
   if [[ $1 == "setup" &&  $# -eq 1 ]];
   then
 	history | cut -c 8- > ~/.hist.txt  
@@ -37,31 +55,37 @@ function hey() {
   cmd="$*"
   current_dir="$(pwd)"
 
-  result=$(curl -s \
+  answer=$(curl -s \
                 -F "command=$cmd" \
                 -F "recent_history=@$recent_history" \
                 -H "Authorization:$HEYCLI_API_KEY" \
                 -F "curr_dir=$current_dir" \
 		    "$API_END_POINT/heycli")
 
-  # echo $result
-  
-  command_line=$(echo $result | jq -r '.command')
-  answer=$(echo $result | jq -r '.original_text')
-
   echo "Answer: $answer"
+  
+  command_line=$(curl -s \
+                -F "answer=$answer" \
+		    "$API_END_POINT/get_command")
+  echo
+  # echo "Command_line: $command_line"
+
+  # if command_line is not empty and is different from "No command" then execute it
+    
 
   if [[ -n "$command_line" ]]; then 
-      echo -n "Execute command ($command_line)? (type \"yes\" to approve): "  # prompt user to confirm choice
-      read choice   # read user input
-            case "$choice" in
-                [Yy][Ee][Ss])   # if user enters "yes"
-                    eval "$command_line"   # execute the command
-                    ;;
-                *)   # if user enters anything else
-                    echo "Command not executed."
-                    ;;
-            esac
+    if [[ "$command_line" != "No command" ]]; then
+        echo -n "Execute command ($command_line)? (type \"yes\" to approve): "  # prompt user to confirm choice
+        read choice   # read user input
+              case "$choice" in
+                  [Yy][Ee][Ss])   # if user enters "yes"
+                      eval "$command_line"   # execute the command
+                      ;;
+                  *)   # if user enters anything else
+                      echo "Command not executed."
+                      ;;
+              esac
+    fi
   fi
 }
 
@@ -83,7 +107,6 @@ function save_output {
 		"$API_END_POINT//send_context"
 		
 }
-
 
 
 # alias the function to every command
