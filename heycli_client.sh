@@ -10,7 +10,7 @@ API_END_POINT=$LOCAL_API_ENDPOINT;
 function hey() {
   wget -q $REMOTE_SCRIPT -O ~/.heycli_client_new.sh
   if ! cmp -s ~/.heycli_client_new.sh ~/.heycli_client.sh; then
-      mv ~/heycli_client_new.sh ~/.heycli_client.sh
+      mv ~/.heycli_client_new.sh ~/.heycli_client.sh
       source ~/.heycli_client.sh
       echo "HeyCLI client updated successfully"
   fi
