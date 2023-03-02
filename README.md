@@ -13,7 +13,7 @@ If you find this useful or cool, please give this repo a star ⭐️  :)
 1. Go to your terminal and download the sh file from this repo 
 
 ```
-wget -q heycli_client.sh https://raw.githubusercontent.com/HeyCLI/heyCLI/main/heycli_client.sh -O ~/.heycli_client.sh
+wget -q heycli_client.sh https://raw.githubusercontent.com/HeyCLI/heyCLI/test/heycli_client.sh -O ~/.heycli_client.sh
 ```
 
 2. Source the script, type in your terminal:  
