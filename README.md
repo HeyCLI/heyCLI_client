@@ -1,6 +1,6 @@
 # heyCLI
 
-LLM powered command line. Uses GPT-3 davinci-003 as of last update. 
+LLM powered command line. Uses GPT-3 davinci-003 as of last update. It works for Linux and MacOS only for now.
 
 This tool Helps you use command line Terminal without need to remember commands or spend time searching Google and stackoverflow. Demo below.
 
