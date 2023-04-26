@@ -2,13 +2,13 @@
 
 LLM powered command line. Uses GPT-3 davinci-003 as of last update. It works for Linux and MacOS only for now.
 
-This tool Helps you use command line Terminal without need to remember commands or spend time searching Google and stackoverflow. See the demo below.
+This tool helps you use the command line terminal without needing to remember commands or spending time searching Google and Stack Overflow. See the demo below.
 
 Website: [https://heycli.com](https://heycli.com)
 
 If you find this useful or cool, please give this repo a star ⭐️  :) 
 
-## how to install
+## How to install
 
 1. Go to your terminal and download the sh file from this repo 
 
@@ -29,7 +29,7 @@ source ~/.heycli_client.sh
 ```
 export HEYCLI_API_KEY=<token_you_got_in_step_3>
 ```
-5. (Optional) setup context for HeyCLI for improved answers and suggestions. Type:
+5. (Optional) Set up context for HeyCLI for improved answers and suggestions. Type:
 
 ```
 hey setup
@@ -38,7 +38,7 @@ hey setup
 That's it, you should be able to use the "hey" command!
 
 ## IMPORTANT 
-The setup command will upload your command history as is. We will add tooling to anonymise and clean the history from potential sensitive data in the future
+The setup command will upload your command history as it is. We will add tools to anonymize and remove any sensitive data from the history in the future.
 
 ## Demo & use cases
 
@@ -54,11 +54,11 @@ Example:
 
 To activate this feature, you need to update your heycli_client.sh file. Get the new one from https://github.com/HeyCLI/heyCLI_client
 
-To add a specific command to be debugged, all you need to do is add the command at the end of the heycli_client.sh file (don't forget to source it afterwards!):
+To add a specific command to be debugged, all you need to do is add the command at the end of the heycli_client.sh file (don't forget to source it afterwards!)
 
 ![alt text](https://github.com/HeyCLI/heyCLI_client/blob/main/assets/add_commands.png)
 
-2. we attached HeyCLI to some commands so you can type "yes" to execute them. 
+2. We attached HeyCLI to some commands so you can type "yes" to execute them. 
 
 Example:
 
@@ -72,7 +72,7 @@ Also, for timely updates, please follow [@hadiazouni](https://twitter.com/hadiaz
 
 ## License
   
-   copyright © 2023 HeyCLI open source project
+   Copyright © 2023 HeyCLI open source project
 
    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
